@@ -19,10 +19,18 @@ const flash = require("connect-flash");
 const pasport = require("passport")
 const Localstrategy = require("passport-local");
 const User = require("./models/user.js");
+const port = process.env.PORT || 8080;
 
 
 
-app.listen(8080, () => {console.log("Server is running...")});
+app.listen(port, (err) => {
+    if (err) {
+        console.error("Failed to start server:", err);
+        return;
+    }
+    console.log(`Server started on Port: ${port}`);
+});
+
 const dburl = process.env.ATLAS_DB_URL;
 async function main()
 {
