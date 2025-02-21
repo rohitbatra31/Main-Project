@@ -10,7 +10,7 @@ const usercontroller = require("../controller/user.js");
 router
 .route("/signup")
 .get(usercontroller.rendersignupform)           //concatendated all requests coming for same route together with router.route
-.post(Wrapasync(usercontroller.singup))
+.post(Wrapasync(usercontroller.signup))
 
 router.route("/login")
 .get(usercontroller.renderloginform)
